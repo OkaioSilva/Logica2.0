@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas</title>
+</head>
+<body>
+    <h1>Informações de um aluno</h1>
+    <div id="output"></div>
+    <script>
+        const aluno = {
+            nome: 'Kaio Da Silva',
+            notas: [5,5,10,8]
+        }
+        const out = document.querySelector('#output');
+        out.innerHTML += `<h2> Aluno: ${aluno.nome}</h2>`;
+        out.innerHTML +=`<p> Notas:</p>`
+        out.innerHTML += `<ul>`
+            let soma = 0
+            for(let i = 0; i < aluno.notas.length; i++){
+                soma += aluno.notas[i]
+                out.innerHTML += `<li>${aluno.notas[i]}</li>`;
+            }
+            let Media = soma / aluno.notas.length
+        out.innerHTML += `</ul>`
+        
+        out.innerHTML += `<p> Média: ${Media} </p>`
+        
+        let aprovado = (Media >= 7) ? 'Sim':'Não'
+        
+        out.innerHTML += `Aprovado? ${aprovado}`
+
+    </script>
+</body>
+</html>

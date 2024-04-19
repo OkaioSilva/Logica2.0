@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>produtos</title>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        table, th, td{
+            border: 1px solid;
+        }
+        th, td{
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        td:last-child{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tabela de produtos</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Produto</th>
+                <th>Preço</th>
+                <th>Qtd em estoque</th>
+            </tr>
+        </thead>
+        <tbody id="produtosTabela">
+
+        </tbody>
+    </table>
+    <script>
+        const produtos = [
+            {nome: 'Caneta', preco: 2.00, estoque: 40},
+            {nome: 'Caderno', preco: 40.00, estoque: 80},
+            {nome: 'Lápis', preco: 1.00, estoque: 15},
+            {nome: 'Marca texto', preco: 1.50, estoque: 20},
+            {nome: 'Papel', preco: 0.30, estoque: 100},
+            {nome: 'Borracha', preco: 0.50, estoque: 25}
+        ]
+        const produtosTabela = document.querySelector('#produtosTabela')
+        for(let i = 0; i < produtos.length; i++){
+            produtosTabela.innerHTML += `
+            <tr>
+                <td>${produtos[i].nome}</td>
+                <td>R$ ${produtos[i].preco}</td>
+                <td>${produtos[i].estoque}</td>
+            </tr>
+            `
+        }
+    </script>
+</body>
+</html>

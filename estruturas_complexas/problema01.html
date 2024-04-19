@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problema 01</title>
+</head>
+<body>
+    <h1>
+        lista de nomes e emails
+    </h1>
+    <ul id="lista"></ul>
+
+    <script>
+        const lista = document.querySelector('#lista');
+        const nomes = [{
+            nome: 'Kaio',
+            email: 'Kaio_souza@hotmail.com'},
+
+            {nome: 'Juliana',
+            email: 'Juliana@hotmail.com'},
+            {nome: 'Jair',
+            email: 'Jair@hotmail.com'},
+            {nome: 'Carlos',
+            email: 'Carlos@hotmail.com'},
+            {nome: 'Ana',
+            email: 'Ana@hotmail.com'
+        }]
+
+        for(let i = 0; i < nomes.length; i++){
+            console.log(`${nomes[i].nome}: ${nomes[i].email}`)
+            lista.innerHTML += `<li>${nomes[i].nome}: ${nomes[i].email} </li>`
+        }
+    </script>
+</body>
+</html>
