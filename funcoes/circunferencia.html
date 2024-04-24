@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área da circunferência</title>
+</head>
+<body>
+    <h1>Área da circunferência</h1>
+    <p>considerando PI = 3,14</p>
+    <label>
+        Valor de R: <input type="number" id="raio">
+    </label>
+    <button onclick="CalcRaio()">Calcular</button>
+    <div>
+        <output id="output"></output>
+    </div>
+    <script>
+        const r = document.querySelector('#raio')
+        const output = document.querySelector('#output')
+        function CalcRaio(){
+            let R = Number(r.value)
+            let pi = parseFloat(Math.PI).toFixed(2);
+            let area = pi * (R ** 2)
+            if(R === 0){
+                output.innerHTML = "Insira um valor válido!"
+            } else{
+                output.innerHTML = `A área da circunferência de r ${R} é ${area}`
+            }
+        }
+    </script>
+</body>
+</html>

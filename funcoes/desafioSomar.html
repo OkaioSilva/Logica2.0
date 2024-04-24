@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Crie uma função chamada somar() que receba dois números e retorne a soma -->
+    <h1>Soma 2 números</h1>
+    <label>
+        Número 1: <input type="number" id="nmb1">
+    </label>
+    <label>
+        Número 2: <input type="number" id="nmb2">
+    </label>
+
+    <button onclick="calc()">Somar</button>
+
+    <script>
+        const nmb1 = document.querySelector('#nmb1');
+        const nmb2 = document.querySelector('#nmb2');
+        function calc(){
+            let a = Number(nmb1.value)
+            let b = Number(nmb2.value)
+            let soma = somar(a, b)
+            console.log(`A soma de ${a} e ${b} é ${soma}`)
+        }
+        function somar(a, b){
+            let soma = a + b
+            return soma
+        }
+    </script>
+</body>
+</html>

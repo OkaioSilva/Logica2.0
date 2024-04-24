@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+</head>
+
+<body>
+    <h1>Funções</h1>
+    <input type="number" id="nmb" placeholder="números de 1 a 100">
+    <button onclick="calc()">Mostrar tabuada</button>
+    <button onclick="del()">Apagar tabuada</button>
+    <p id="msg"></p>
+    <select id="tab" size="11"></select>
+    <script>
+        function calc() {
+            const N = document.querySelector('#nmb');
+            const msg = document.querySelector('#msg');
+            const tab = document.querySelector('#tab');
+            if (N.value.length === 0) {
+                msg.innerHTML = '[ERRO!] Insira um número válido'
+            } else {
+                for (let i = 1; i <= 10; i++) {
+                    let multi = N.value * i
+                    console.log(N.value + ' X ' + i + '= ' + multi)
+                    let text = document.createElement('option')
+                    text.text += N.value + ' X ' + i + '= ' + multi
+                    tab.appendChild(text)
+                }
+            }
+        }
+        function del() {
+            tab.innerHTML = ''
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área do triângulo</title>
+</head>
+<body>
+    <h1>Área de triângulo</h1>
+    <label>
+        Base: <input type="number"  id="base">
+    </label>
+    <label>
+        Altura: <input type="number"  id="altura">
+    </label>
+    <button onclick="calc()">Calcular</button>
+    <button onclick="del()">Limpar</button>
+    <div>
+        <output id="output"></output>
+    </div>
+
+    <script>
+        const base = document.querySelector('#base');
+        const altura = document.querySelector('#altura');
+        const out = document.querySelector('#output');
+
+        function calc(){
+            let baseValor = Number(base.value); 
+            let alturaValor = Number(altura.value);
+            out.innerHTML = ''
+            if(baseValor === 0 || alturaValor === 0){
+                out.innerHTML += 'Insira um número válido'
+                console.log('insira um número') 
+            } else{
+                let area = (baseValor * alturaValor) / 2
+                out.innerHTML += `A área do triângulo de base ${baseValor} e altura ${alturaValor} é: ${area}`
+            }
+        }
+        function del(){
+            out.innerHTML = ''  
+        }
+    </script>
+</body>
+</html>
